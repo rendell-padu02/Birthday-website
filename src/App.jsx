@@ -44,7 +44,7 @@ function App() {
         </div>
         <div className="card birthday-card">
           <div className="age-number">25</div>
-          <h1 className="birthday-title">Happy Birthday</h1>
+          <h1 className="birthday-title">Happy Birthday Nidhi</h1>
           <p className="birthday-subtitle">Celebrating a new chapter</p>
           <div className="elegant-line"></div>
           <p className="birthday-message">May this year bring you endless possibilities and beautiful moments</p>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import PhotoSlideshow from './components/PhotoSlideshow'
+import QRCodeUpload from './components/QRCodeUpload'
 
 function App() {
   const [password, setPassword] = useState('')
@@ -43,16 +45,47 @@ function App() {
           <div className="shape shape-4"></div>
         </div>
         <div className="card birthday-card">
+          <div className="card-silver-decorations">
+            <div className="silver-star star-1">✦</div>
+            <div className="silver-star star-2">✦</div>
+            <div className="silver-star star-3">✦</div>
+            <div className="silver-star star-4">✦</div>
+            <div className="silver-sparkle sparkle-1">✨</div>
+            <div className="silver-sparkle sparkle-2">✨</div>
+            <div className="silver-sparkle sparkle-3">✨</div>
+            <div className="silver-sparkle sparkle-4">✨</div>
+          </div>
           <div className="age-number">25</div>
           <h1 className="birthday-title">Happy Birthday Nidhi</h1>
           <p className="birthday-subtitle">Celebrating a new chapter</p>
           <div className="elegant-line"></div>
           <p className="birthday-message">May this year bring you endless possibilities and beautiful moments</p>
         </div>
+        
+        <PhotoSlideshow />
+        <QRCodeUpload />
         <div className="light-beams">
           <div className="beam beam-1"></div>
           <div className="beam beam-2"></div>
           <div className="beam beam-3"></div>
+        </div>
+        <div className="confetti-container">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className={`confetti confetti-${i + 1}`}
+              style={{
+                '--delay': `${i * 0.4}s`,
+                '--x': `${(i * 7) % 100}%`,
+                '--duration': `${28 + (i % 12)}s`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="silver-shimmers">
+          {[...Array(30)].map((_, i) => (
+            <div key={i} className={`shimmer shimmer-${i + 1}`}></div>
+          ))}
         </div>
       </div>
     )

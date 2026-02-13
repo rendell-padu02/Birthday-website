@@ -1,9 +1,7 @@
 .password-container,
 .birthday-container {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Dancing Script', 'Caveat', 'Pacifico', cursive;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
@@ -14,11 +12,16 @@
 }
 
 .birthday-container {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #7e22ce 50%, #9333ea 75%, #1e3c72 100%);
-  background-size: 400% 400%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(192, 192, 192, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0d0d0d 50%, #1a1a1a 75%, #000000 100%);
+  background-size: 100% 100%, 100% 100%, 400% 400%;
   animation: gradientShift 20s ease infinite;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: inset 0 0 200px rgba(192, 192, 192, 0.1);
 }
 
 .bg-music-player {
@@ -43,18 +46,26 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%);
   backdrop-filter: blur(20px);
   padding: 60px 50px;
   border-radius: 24px;
   text-align: center;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(192, 192, 192, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(192, 192, 192, 0.2);
   max-width: 600px;
   width: 100%;
   animation: fadeIn 0.8s ease-out;
   position: relative;
   z-index: 10;
+}
+
+.birthday-card {
+  max-width: 900px;
+  padding: 100px 80px;
 }
 
 @keyframes fadeIn {
@@ -69,11 +80,12 @@
 }
 
 .password-card h1 {
+  font-family: 'Dancing Script', 'Caveat', cursive;
   margin-top: 0;
   margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 600;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
 }
 
 .password-input {
@@ -81,42 +93,53 @@
   padding: 15px 20px;
   margin-bottom: 15px;
   border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  border: 2px solid rgba(192, 192, 192, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: #e8e8e8;
   font-size: 16px;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .password-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(192, 192, 192, 0.5);
 }
 
 .password-input:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(192, 192, 192, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.2);
 }
 
 .submit-button {
   width: 100%;
   padding: 15px 20px;
   border-radius: 12px;
-  border: none;
-  background: linear-gradient(135deg, #d4af37, #f4d03f);
-  color: #1a1a1a;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(255, 255, 255, 0.1));
+  color: #e8e8e8;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(192, 192, 192, 0.2);
   letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
 }
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(255, 255, 255, 0.15));
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(192, 192, 192, 0.4);
+  border-color: rgba(192, 192, 192, 0.5);
 }
 
 .submit-button:active {
@@ -142,37 +165,136 @@
   overflow: visible;
 }
 
+/* Silver Decorations Inside Card */
+.card-silver-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.silver-star {
+  position: absolute;
+  font-size: 24px;
+  color: rgba(192, 192, 192, 0.6);
+  text-shadow: 
+    0 0 10px rgba(192, 192, 192, 0.8),
+    0 0 20px rgba(192, 192, 192, 0.4);
+  filter: drop-shadow(0 0 5px rgba(192, 192, 192, 0.6));
+}
+
+.star-1 {
+  top: 15%;
+  left: 10%;
+  transform: rotate(-15deg);
+}
+
+.star-2 {
+  top: 20%;
+  right: 12%;
+  transform: rotate(20deg);
+}
+
+.star-3 {
+  bottom: 25%;
+  left: 8%;
+  transform: rotate(10deg);
+}
+
+.star-4 {
+  bottom: 20%;
+  right: 10%;
+  transform: rotate(-25deg);
+}
+
+.silver-sparkle {
+  position: absolute;
+  font-size: 18px;
+  color: rgba(192, 192, 192, 0.7);
+  text-shadow: 
+    0 0 8px rgba(192, 192, 192, 0.9),
+    0 0 15px rgba(192, 192, 192, 0.5);
+  filter: drop-shadow(0 0 4px rgba(192, 192, 192, 0.7));
+}
+
+.sparkle-1 {
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+}
+
+.sparkle-2 {
+  top: 50%;
+  left: 5%;
+  transform: rotate(15deg);
+}
+
+.sparkle-3 {
+  top: 50%;
+  right: 5%;
+  transform: rotate(-15deg);
+}
+
+.sparkle-4 {
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%) rotate(10deg);
+}
+
 .age-number {
-  font-size: 120px;
-  font-weight: 300;
+  font-family: 'Birthstone', 'Dancing Script', cursive;
+  font-size: 180px;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #d4af37, #f4d03f, #fff8dc);
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #ffffff 50%, #e8e8e8 75%, #c0c0c0 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: numberGlow 3s ease-in-out infinite;
-  letter-spacing: -5px;
+  animation: numberGlow 3s ease-in-out infinite, silverShine 4s ease-in-out infinite;
+  letter-spacing: 0px;
+  filter: drop-shadow(0 0 20px rgba(192, 192, 192, 0.6)) drop-shadow(0 0 40px rgba(192, 192, 192, 0.4));
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes silverShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes numberGlow {
   0%, 100% {
-    opacity: 0.9;
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    opacity: 0.95;
+    filter: drop-shadow(0 0 20px rgba(192, 192, 192, 0.5)) drop-shadow(0 0 40px rgba(192, 192, 192, 0.3));
   }
   50% {
     opacity: 1;
-    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
+    filter: drop-shadow(0 0 30px rgba(192, 192, 192, 0.8)) drop-shadow(0 0 60px rgba(192, 192, 192, 0.5));
   }
 }
 
 .birthday-title {
-  font-size: 48px;
-  font-weight: 300;
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: 64px;
+  font-weight: 600;
   margin: 30px 0 20px;
-  letter-spacing: 2px;
-  color: #ffffff;
+  letter-spacing: 1px;
+  color: #e8e8e8;
   animation: titleFadeIn 1s ease-out 0.3s both;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(192, 192, 192, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes titleFadeIn {
@@ -187,13 +309,18 @@
 }
 
 .birthday-subtitle {
-  font-size: 18px;
-  font-weight: 400;
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: 24px;
+  font-weight: 500;
   margin-top: 10px;
-  opacity: 0.85;
+  color: #c0c0c0;
+  opacity: 0.95;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: none;
   animation: subtitleFadeIn 1s ease-out 0.5s both;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes subtitleFadeIn {
@@ -208,11 +335,14 @@
 }
 
 .elegant-line {
-  width: 80px;
+  width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), #c0c0c0, rgba(192, 192, 192, 0.3), transparent);
   margin: 30px auto;
   animation: lineExpand 1s ease-out 0.7s both;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes lineExpand {
@@ -227,12 +357,16 @@
 }
 
 .birthday-message {
-  font-size: 16px;
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: 22px;
   line-height: 1.6;
   margin-top: 25px;
-  opacity: 0.8;
-  font-weight: 300;
+  color: #d0d0d0;
+  opacity: 0.9;
+  font-weight: 400;
   animation: messageFadeIn 1s ease-out 0.9s both;
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes messageFadeIn {
@@ -261,21 +395,24 @@
   position: absolute;
   width: 3px;
   height: 3px;
-  background: rgba(212, 175, 55, 0.6);
+  background: rgba(192, 192, 192, 0.6);
   border-radius: 50%;
   animation: floatParticle 15s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(192, 192, 192, 0.8);
 }
 
 .particle:nth-child(odd) {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   width: 2px;
   height: 2px;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
 .particle:nth-child(3n) {
-  background: rgba(147, 51, 234, 0.5);
+  background: rgba(192, 192, 192, 0.7);
   width: 4px;
   height: 4px;
+  box-shadow: 0 0 8px rgba(192, 192, 192, 0.9);
 }
 
 @keyframes floatParticle {
@@ -360,8 +497,9 @@
 
 .shape {
   position: absolute;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(192, 192, 192, 0.25);
   animation: rotateShape 20s linear infinite;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.2);
 }
 
 .shape-1 {
@@ -435,11 +573,12 @@
   height: 100%;
   background: linear-gradient(180deg, 
     transparent 0%, 
-    rgba(212, 175, 55, 0.3) 20%, 
-    rgba(212, 175, 55, 0.5) 50%, 
-    rgba(212, 175, 55, 0.3) 80%, 
+    rgba(192, 192, 192, 0.2) 20%, 
+    rgba(192, 192, 192, 0.4) 50%, 
+    rgba(192, 192, 192, 0.2) 80%, 
     transparent 100%);
   animation: beamMove 8s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
 }
 
 .beam-1 {
@@ -469,3 +608,179 @@
     opacity: 0.6;
   }
 }
+
+/* Silver Shimmers */
+/* Confetti falling slowly from top */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  left: var(--x, 50%);
+  width: 8px;
+  height: 12px;
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.9) 0%, rgba(230, 230, 230, 0.85) 50%, rgba(192, 192, 192, 0.9) 100%);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  animation: confettiFall var(--duration, 30s) var(--delay, 0s) linear infinite;
+  opacity: 0.85;
+}
+
+.confetti:nth-child(odd) {
+  transform: rotate(-15deg);
+  width: 10px;
+  height: 6px;
+}
+
+.confetti:nth-child(3n) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(220, 220, 220, 0.85) 100%);
+  width: 6px;
+  height: 10px;
+}
+
+.confetti:nth-child(5n) {
+  background: linear-gradient(135deg, rgba(180, 180, 180, 0.9) 0%, rgba(200, 200, 200, 0.85) 100%);
+  width: 7px;
+  height: 11px;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.85;
+  }
+  95% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti:nth-child(odd).confetti {
+  animation: confettiFallOdd var(--duration, 30s) var(--delay, 0s) linear infinite;
+}
+
+@keyframes confettiFallOdd {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(-15deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.85;
+  }
+  95% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-25px) rotate(705deg);
+    opacity: 0;
+  }
+}
+
+.silver-shimmers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.shimmer {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(192, 192, 192, 0.8);
+  border-radius: 50%;
+  animation: shimmerFloat 20s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.9), 0 0 20px rgba(192, 192, 192, 0.5);
+}
+
+.shimmer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: shimmerPulse 2s ease-in-out infinite;
+}
+
+@keyframes shimmerFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-300px) translateX(100px) scale(1.5);
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px) translateX(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmerPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* Generate shimmer positions */
+.shimmer-1 { left: 5%; top: 20%; animation-delay: 0s; animation-duration: 18s; }
+.shimmer-2 { left: 15%; top: 60%; animation-delay: 1s; animation-duration: 20s; }
+.shimmer-3 { left: 25%; top: 30%; animation-delay: 2s; animation-duration: 19s; }
+.shimmer-4 { left: 35%; top: 70%; animation-delay: 0.5s; animation-duration: 21s; }
+.shimmer-5 { left: 45%; top: 40%; animation-delay: 1.5s; animation-duration: 18s; }
+.shimmer-6 { left: 55%; top: 80%; animation-delay: 2.5s; animation-duration: 20s; }
+.shimmer-7 { left: 65%; top: 25%; animation-delay: 0.8s; animation-duration: 19s; }
+.shimmer-8 { left: 75%; top: 65%; animation-delay: 1.8s; animation-duration: 21s; }
+.shimmer-9 { left: 85%; top: 35%; animation-delay: 2.2s; animation-duration: 18s; }
+.shimmer-10 { left: 10%; top: 50%; animation-delay: 0.3s; animation-duration: 20s; }
+.shimmer-11 { left: 20%; top: 15%; animation-delay: 1.2s; animation-duration: 19s; }
+.shimmer-12 { left: 30%; top: 85%; animation-delay: 2.3s; animation-duration: 21s; }
+.shimmer-13 { left: 40%; top: 45%; animation-delay: 0.7s; animation-duration: 18s; }
+.shimmer-14 { left: 50%; top: 75%; animation-delay: 1.7s; animation-duration: 20s; }
+.shimmer-15 { left: 60%; top: 55%; animation-delay: 2.7s; animation-duration: 19s; }
+.shimmer-16 { left: 70%; top: 20%; animation-delay: 0.4s; animation-duration: 21s; }
+.shimmer-17 { left: 80%; top: 90%; animation-delay: 1.4s; animation-duration: 18s; }
+.shimmer-18 { left: 5%; top: 10%; animation-delay: 2.4s; animation-duration: 20s; }
+.shimmer-19 { left: 95%; top: 50%; animation-delay: 0.9s; animation-duration: 19s; }
+.shimmer-20 { left: 12%; top: 80%; animation-delay: 1.9s; animation-duration: 21s; }
+.shimmer-21 { left: 22%; top: 5%; animation-delay: 2.9s; animation-duration: 18s; }
+.shimmer-22 { left: 32%; top: 55%; animation-delay: 0.6s; animation-duration: 20s; }
+.shimmer-23 { left: 42%; top: 25%; animation-delay: 1.6s; animation-duration: 19s; }
+.shimmer-24 { left: 52%; top: 95%; animation-delay: 2.6s; animation-duration: 21s; }
+.shimmer-25 { left: 62%; top: 60%; animation-delay: 0.2s; animation-duration: 18s; }
+.shimmer-26 { left: 72%; top: 30%; animation-delay: 1.2s; animation-duration: 20s; }
+.shimmer-27 { left: 82%; top: 70%; animation-delay: 2.2s; animation-duration: 19s; }
+.shimmer-28 { left: 92%; top: 40%; animation-delay: 0.8s; animation-duration: 21s; }
+.shimmer-29 { left: 8%; top: 45%; animation-delay: 1.8s; animation-duration: 18s; }
+.shimmer-30 { left: 18%; top: 75%; animation-delay: 2.8s; animation-duration: 20s; }

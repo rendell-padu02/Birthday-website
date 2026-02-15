@@ -92,7 +92,7 @@ service firebase.storage {
 ## Step 8: Test Your Setup
 
 1. Run `npm run dev`
-2. Enter the password: `VIBGYOR`
+2. Enter the password: `DEST1NY`
 3. Try uploading a photo using the "Add Photo" button
 4. Check Firebase Console → Storage to see if the photo uploaded
 5. Check Firebase Console → Firestore to see if the metadata was saved

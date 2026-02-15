@@ -52,7 +52,7 @@ VITE_GOOGLE_API_KEY=your_actual_api_key_here
 
 1. Upload a test photo to your Google Drive folder
 2. Run `npm run dev`
-3. Enter password: `VIBGYOR`
+3. Enter password: `DEST1NY`
 4. Check if the photo appears in the slideshow
 5. Upload another photo and wait ~10 seconds - it should appear automatically!
 

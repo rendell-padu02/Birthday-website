@@ -25,7 +25,7 @@ Then follow the prompts:
 
 Your site will be live at: `https://your-project-name.vercel.app`
 
-The password is: **VIBGYOR**
+The password is: **DEST1NY**
 
 ---
 

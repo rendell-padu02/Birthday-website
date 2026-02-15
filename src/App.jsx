@@ -8,7 +8,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [error, setError] = useState('')
 
-  const correctPassword = 'VIBGYOR'
+  const correctPassword = 'DEST1NY'
 
   const handleSubmit = (e) => {
     e.preventDefault()

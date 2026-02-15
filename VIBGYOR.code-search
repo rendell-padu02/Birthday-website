@@ -1,0 +1,33 @@
+# Query: VIBGYOR
+# ContextLines: 1
+
+6 results - 5 files
+
+DEPLOY.md:
+  27  
+  28: The password is: **DEST1NY**
+  29  
+
+FIREBASE_SETUP.md:
+  94  1. Run `npm run dev`
+  95: 2. Enter the password: `DEST1NY`
+  96  3. Try uploading a photo using the "Add Photo" button
+
+GOOGLE_DRIVE_SETUP.md:
+  54  2. Run `npm run dev`
+  55: 3. Enter password: `DEST1NY`
+  56  4. Check if the photo appears in the slideshow
+
+README.md:
+   6  
+   7: - 🔐 Password protection (Password: DEST1NY)
+   8  - 🎨 Elegant, aesthetic design perfect for a 25th birthday
+
+  54  
+  55: The password to access the birthday page is: **DEST1NY**
+  56  
+
+src\App.jsx:
+  10  
+  11:   const correctPassword = 'DEST1NY'
+  12  

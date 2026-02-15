@@ -4,7 +4,7 @@ A beautiful, password-protected birthday website built with React and Vite.
 
 ## Features
 
-- 🔐 Password protection (Password: VIBGYOR)
+- 🔐 Password protection (Password: DEST1NY)
 - 🎨 Elegant, aesthetic design perfect for a 25th birthday
 - 🎵 Background music integration (YouTube)
 - ✨ Sophisticated animations and particle effects
@@ -52,7 +52,7 @@ This project is configured for deployment on Vercel. See `DEPLOY.md` for deploym
 
 ## Password
 
-The password to access the birthday page is: **VIBGYOR**
+The password to access the birthday page is: **DEST1NY**
 
 ## Setup Photo Slideshow Feature
 
